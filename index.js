@@ -15,15 +15,12 @@ const firebase = require("firebase");
 let blowsole = function (config,signInCred,dbRef) {
     this.fb = firebase;
     this.fb.initializeApp(config);
-    this.fb.auth().signInWithEmailAndPassword(signInCred.email, signInCred.password);
     this.dbRef = dbRef;
 };
 
 blowsole.prototype.log = function(logs, callBack){
     this.fb.database().ref(this.dbRef).push(logs, function(rs){callBack(rs)});
 };
-
-blowsole.prototype.iAmDone = function(){};
 
 module.exports = blowsole;
 
