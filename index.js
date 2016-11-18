@@ -12,7 +12,7 @@ const firebase = require("firebase");
  * @param { string } dbRef - reference endpoint
  * */
 
-let blowsole = function (config,signInCred,dbRef) {
+let blowsole = function (config,dbRef) {
     this.fb = firebase;
     this.fb.initializeApp(config);
     this.dbRef = dbRef;
