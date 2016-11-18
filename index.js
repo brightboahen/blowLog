@@ -20,7 +20,7 @@ let blowsole = function (config,signInCred,dbRef) {
 };
 
 blowsole.prototype.log = function(logs, callBack){
-    this.fb.database().ref(this.dbRef).push(logs, callBack);
+    this.fb.database().ref(this.dbRef).push(logs, function(rs){callBack(rs)});
 };
 
 blowsole.prototype.iAmDone = function(){};
