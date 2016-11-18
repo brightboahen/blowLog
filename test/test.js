@@ -6,4 +6,5 @@ var blowsole = require('../index');
 
 
 describe('#blowsole', function () {
+
 });

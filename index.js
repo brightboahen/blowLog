@@ -12,7 +12,6 @@ const firebase = require("firebase");
  * @param { string } dbRef - reference endpoint
  * */
 
-
 let blowsole = function (config,signInCred,dbRef) {
     this.fb = firebase;
     this.fb.initializeApp(config);
@@ -20,8 +19,8 @@ let blowsole = function (config,signInCred,dbRef) {
     this.dbRef = dbRef;
 };
 
-blowsole.prototype.log = function(logs){
-    this.fb.database().ref(this.dbRef).push(logs, this.iAmDone);
+blowsole.prototype.log = function(logs, callBack){
+    this.fb.database().ref(this.dbRef).push(logs, callBack);
 };
 
 blowsole.prototype.iAmDone = function(){};
